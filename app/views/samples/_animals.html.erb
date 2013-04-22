@@ -1,0 +1,11 @@
+<%= object.fields_for :sample_animals do |builder| %>
+  <li>
+  <%= builder.collection_select :animal_id, Animal.all, :id, :spp_code, {:include_blank => ""}, {:class=>"sppCommon" } %>
+  <%= builder.text_field :number_individuals %>
+  <%= builder.text_field :mean  %>
+  <%= builder.text_field :min  %>
+  <%= builder.text_field :max  %>
+  <%= builder.link_to_remove "Remove Species", {:tabindex => "-1"}  %>
+  </li>
+
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spp_code: MyString
+  scientific_name: MyString
+  common_name: MyString
+
+two:
+  spp_code: MyString
+  scientific_name: MyString
+  common_name: MyString
