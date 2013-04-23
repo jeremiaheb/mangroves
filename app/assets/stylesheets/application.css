@@ -9,5 +9,84 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require select2
  *= require_tree .
  */
+
+/*.formContainer {*/
+    /*width: 100%;*/
+    /*height: 500px;*/
+    /*padding: 20px;*/
+    /*background: #f0f0f0;*/
+    /*overflow: auto;*/
+ 
+    /*[> Border style <]*/
+    /*border: 1px solid #cccccc;*/
+    /*-moz-border-radius: 7px;*/
+    /*-webkit-border-radius: 7px;*/
+    /*border-radius: 7px;*/
+ 
+    /*[> Border Shadow <]*/
+    /*-moz-box-shadow: 2px 2px 2px #cccccc;*/
+    /*-webkit-box-shadow: 2px 2px 2px #cccccc;*/
+    /*box-shadow: 2px 2px 2px #cccccc;*/
+
+    /*[> Font Styles <]*/
+    /*font-size: 10px;*/
+ 
+/*}*/
+
+.sampleSection {
+    width: 100%;
+    height: 50%px;
+    padding: 20px;
+    background: #f0f0f0;
+    overflow: auto;
+ 
+    /* Border style */
+    border: 1px solid #cccccc;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+ 
+    /* Border Shadow */
+    -moz-box-shadow: 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px #cccccc;
+    box-shadow: 2px 2px 2px #cccccc;
+
+    /* Font Styles */
+    font-size: 10px;
+
+}
+
+#animals {
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    background: #f0f0f0;
+    overflow: auto;
+ 
+    /* Border style */
+    border: 1px solid #cccccc;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+ 
+    /* Border Shadow */
+    -moz-box-shadow: 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px #cccccc;
+    box-shadow: 2px 2px 2px #cccccc;
+
+    /* Font Styles */
+    font-size: 10px;
+ 
+}
+
+#animals input {
+  width: 50px !important;
+}
+
+
+.select2-container {
+  width: 200px;
+}

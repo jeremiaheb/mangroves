@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422190917) do
+ActiveRecord::Schema.define(:version => 20130423122907) do
 
   create_table "animals", :force => true do |t|
     t.string   "spp_code"
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(:version => 20130422190917) do
     t.integer  "sample_id"
     t.integer  "animal_id"
     t.integer  "number_individuals"
-    t.integer  "mean"
-    t.integer  "min"
-    t.integer  "max"
+    t.integer  "average_length"
+    t.integer  "min_length"
+    t.integer  "max_length"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end

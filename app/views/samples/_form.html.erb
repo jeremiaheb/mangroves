@@ -1,56 +1,53 @@
-<div class="form-horizontal">
-<%= nested_form_for @sample do |f| %>
+
+<%= nested_form_for @sample, :html => { :class => "form-horizontal formContainer" } do |f| %>
 
   <%= render "shared/error_messages", :target => @sample%>
+<div class="sampleSection">
+  <div class="row">
+    <div class="span6">
+          <div class="control-group">
+             <label class="control-label">Diver</label>
+             <div class="controls">
+               <%= f.collection_select :diver_id, Diver.all, :id, :firstname, { :include_blank => "" } %><br />
+             </div>
+           </div>
+            
+           <div class="control-group">
+             <label class="control-label">Sample Date</label>
+             <div class="controls">
+               <%= f.text_field :date %>
+             </div>
+           </div>
+           
+           <div class="control-group">
+             <label class="control-label">Field Id</label>
+             <div class="controls">
+               <%= f.text_field :field_id %>
+             </div>
+           </div>
 
+           <div class="control-group">
+            <label class="control-label">Season</label>
+             <div class="controls">
+               <%= f.text_field :season %>
+             </div>
+           </div>
 
-<div class='formContainer'>
-  <div id="sampleSection" class="sectionDiv">
-    <div class='section_1'>
-     <div id='section_1_part_1'>
-       
-       <div class="control-group">
-          <label class="control-label">Diver</label>
-          <div class="controls">
-            <%= f.collection_select :diver_id, Diver.all, :id, :firstname, { :include_blank => "" } %><br />
-          </div>
-        </div>
-         
-        <div class="control-group">
-          <label class="control-label">Sample Date</label>
-          <div class="controls">
-            <%= f.text_field :date %>
-          </div>
-        </div>
-        
-        <div class="control-group">
-          <label class="control-label">Field Id</label>
-          <div class="controls">
-            <%= f.text_field :field_id %>
-          </div>
-        </div>
+           <div class="control-group">
+            <label class="control-label">Strata</label>
+             <div class="controls">
+               <%= f.text_field :strata %>
+             </div>
+           </div>
 
-        <div class="control-group">
-         <label class="control-label">Season</label>
-          <div class="controls">
-            <%= f.text_field :season %>
-          </div>
-        </div>
-
-        <div class="control-group">
-         <label class="control-label">Strata</label>
-          <div class="controls">
-            <%= f.text_field :strata %>
-          </div>
-        </div>
-
-        <div class="control-group">
-         <label class="control-label">latitude</label>
-          <div class="controls">
-            <%= f.text_field :latitude %>
-          </div>
-        </div>
-
+           <div class="control-group">
+            <label class="control-label">latitude</label>
+             <div class="controls">
+               <%= f.text_field :latitude %>
+             </div>
+           </div>
+    </div>
+    <div class="span6">
         <div class="control-group">
          <label class="control-label">longitude</label>
           <div class="controls">
@@ -92,26 +89,24 @@
             <%= f.text_field :visibility %>
           </div>
         </div>
-
-    <div id="animals">
-    <ol>   
-      <%= render "animals", :object => f %>
-      
-      <%= f.link_to_add "Add species", :sample_animals %>
-    </ol>
-    </div>
-
     </div>
   </div>
 </div>
+  <div class="row">
+    <div class="span12">
+      <div id="animals">
+        <ol>   
+          <%= render "animals", :object => f %>
+          
+          <%= f.link_to_add "Add species", :sample_animals %>
+        </ol>
+      </div>
+    </div>
+  </div>
 
   <div class="actions">
     <%= f.submit "Submit Sample", :id => "submitButton" %>
   </div>
-
-</div>
-</div>
-
 <% end %>
-</div>
+
 
