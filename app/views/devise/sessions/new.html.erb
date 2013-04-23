@@ -1,0 +1,38 @@
+<div class="form-horizontal">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+
+  <fieldset>
+    <div id="legend">
+      <legend class="">Login</legend>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">Username</label>
+      <div class="controls">
+        <%= f.text_field :username %>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Password</label>
+      <div class="controls">
+        <%= f.text_field :password, { :type => 'Password' } %>
+      </div>
+    </div>
+ 
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <%= f.submit "Sign In" %>
+        <%#<%= render "links" %>%>
+      </div>
+    </div>
+  </fieldset>
+
+<% end %>
+
+
+</div>

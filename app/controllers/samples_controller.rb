@@ -1,4 +1,8 @@
 class SamplesController < ApplicationController
+  
+  before_filter :authenticate_diver!
+
+  
   # GET /samples
   # GET /samples.json
   def index

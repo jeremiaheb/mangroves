@@ -1,4 +1,9 @@
 class DiversController < ApplicationController
+  
+  
+  #before_filter :authenticate_diver!
+
+  
   # GET /divers
   # GET /divers.json
   def index

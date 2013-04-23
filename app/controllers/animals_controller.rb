@@ -1,4 +1,9 @@
 class AnimalsController < ApplicationController
+  
+  
+  before_filter :authenticate_diver!
+
+    
   # GET /animals
   # GET /animals.json
   def index

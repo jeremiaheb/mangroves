@@ -1,4 +1,6 @@
 Mangroves::Application.routes.draw do
+  devise_for :divers
+
   resources :animals
 
   resources :divers
