@@ -71,6 +71,7 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    gmaps4rails (1.5.6)
     highline (1.6.18)
     hike (1.2.2)
     i18n (0.6.4)
@@ -186,6 +187,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   devise
+  gmaps4rails
   jquery-datatables-rails!
   jquery-rails
   jquery-ui-rails

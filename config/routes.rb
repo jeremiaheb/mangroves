@@ -9,6 +9,8 @@ Mangroves::Application.routes.draw do
 
   resources :samples
 
+  match 'siteMap' => "samples#siteMap"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

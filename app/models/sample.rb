@@ -1,5 +1,7 @@
 class Sample < ActiveRecord::Base
 
+  acts_as_gmappable :process_geocoding => false
+
   belongs_to :diver
   has_many :sample_animals, :dependent => :destroy
   validates_presence_of :sample_animals, :message => "you must have at leat one species record (can be NO FISH)"
@@ -11,5 +13,22 @@ class Sample < ActiveRecord::Base
   def myId
     return self.diver_id
   end
+
+  def gmaps4rails_infowindow
+    "<b>#{self.field_id}</b><br />
+    #{self.latitude}, #{self.longitude}<br />
+    Date Completed: #{self.date}"
+  end
+
+  def gmaps4rails_address
+    "#{self.latitude}, #{self.longitude}"
+  end
+
+  def gmaps4rails_title
+    "#{self.field_id}"
+  end
+
+
+
 
 end
