@@ -1,6 +1,6 @@
 require 'bundler/capistrano'
 load 'deploy/assets'
-set :application, "entryApplication"
+set :application, "mangroves"
 set :repository,  "https://github.com/jeremiaheb/mangroves.git"
 
 set :scm, :git
