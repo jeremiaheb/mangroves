@@ -1,6 +1,47 @@
-<h1>Editing diver</h1>
+<div class="form-horizontal">
+<%= form_for(@diver) do |f| %>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @diver %> |
+
+  <div class="control-group">
+    <label class="control-label">Username</label>
+    <div class="controls">
+      <%= f.text_field :username %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">First name</label>
+    <div class="controls">
+      <%= f.text_field :firstname %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Last name</label>
+    <div class="controls">
+      <%= f.text_field :lastname %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Email</label>
+    <div class="controls">
+      <%= f.text_field :email %>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label">Roles</label>
+    <div class="controls">
+      <%= f.collection_select :role, Diver::ROLES, :to_s, :humanize %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div><%= link_to 'Show', @diver %> |
 <%= link_to 'Back', divers_path %>

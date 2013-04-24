@@ -8,4 +8,8 @@ class Sample < ActiveRecord::Base
 
   attr_accessible :diver_id, :date, :field_id, :season, :strata, :latitude, :longitude, :temperature, :dissolved_oxygen, :salinity, :avg_depth, :visibility, :sample_animals_attributes
 
+  def myId
+    return self.diver_id
+  end
+
 end

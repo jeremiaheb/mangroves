@@ -1,12 +1,18 @@
 class SamplesController < ApplicationController
   
   before_filter :authenticate_diver!
+  load_and_authorize_resource
 
-  
+  def current_ability
+    @current_ability ||= Ability.new(current_diver)
+  end
+
   # GET /samples
   # GET /samples.json
   def index
-    @samples = Sample.all
+    #@samples = Sample.all
+    
+    @samples = current_diver.role == 'admin' || current_diver.role == 'Diver' ? Sample.all : current_diver.samples
 
     respond_to do |format|
       format.html # index.html.erb

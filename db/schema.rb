@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423190534) do
+ActiveRecord::Schema.define(:version => 20130424121800) do
 
   create_table "animals", :force => true do |t|
     t.string   "spp_code"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130423190534) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "username"
+    t.string   "role"
   end
 
   add_index "divers", ["email"], :name => "index_divers_on_email", :unique => true

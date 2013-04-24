@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+Animal.delete_all
+Animal.connection.execute( 'ALTER SEQUENCE animals_id_seq RESTART WITH 1' )
+open("#{Rails.root}/db/SupportData/SpeciesList.csv") do |animals|
+  animals.read.each_line do |animal|
+    SppCode, ScientificName, CommonName = animal.chomp.split(",")
+    Animal.create( :spp_code => SppCode, :scientific_name => ScientificName, :common_name => CommonName )
+  end
+end

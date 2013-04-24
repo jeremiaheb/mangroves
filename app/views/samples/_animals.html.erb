@@ -1,6 +1,6 @@
 <%= object.fields_for :sample_animals do |builder| %>
   <li>
-  <%= builder.collection_select :animal_id, Animal.all, :id, :spp_code, {:include_blank => ""}, {:class=>"sppCommon" } %>
+  <%= builder.collection_select :animal_id, Animal.all, :id, :searchable_name, {:include_blank => ""}, {:class=>"sppCommon" } %>
   <%= builder.text_field :number_individuals %>
   <%= builder.text_field :average_length  %>
   <%= builder.text_field :min_length %>

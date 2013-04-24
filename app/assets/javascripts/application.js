@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap
 //= require jquery_nested_form
 //= require select2
 //= require_tree .
@@ -21,6 +23,25 @@
  
 $(function(){
   
+      $('tr[data-link]').click(function(){
+      window.location = this.dataset.link
+    });
+
+    $('tr[data-link]').hover(
+      function(){
+        $(this).css("background", "yellow");
+        $(this).css("cursor", "pointer");
+      },
+      function(){
+        $(this).css("background", "");
+      }
+    );
+    
+    $('.display').dataTable( {
+        "sDom": "<'row'<'span6'T><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+        "sPaginationType": "bootstrap"
+    } );
+
   $("#animals").find(".sppCommon").select2();
 
   $(document).on('nested:fieldAdded', function(event){

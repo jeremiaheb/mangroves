@@ -1,21 +1,24 @@
-<h1>Listing samples</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @samples.each do |sample| %>
-  <tr>
-    <td><%= link_to 'Show', sample %></td>
-    <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
-    <td><%= link_to 'Destroy', sample, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+  <div class="formContainer">
+    <h3><%= current_diver.firstname %> Samples</h3>
+  
+      <table id="sampleList" class="display table table-condensed">
+        <thead>
+         <tr>
+           <th>Diver</th>
+           <th>field ID</th>
+           <th>Date</th>
+         </tr>
+       </thead>
+       <tbody>
+      <% @samples.each do |sample| %>
+        <tr data-link=" <%= edit_sample_path(sample) %> ">
+          <td><%= sample.diver.firstname %></td>
+          <td class='fieldid_check'><%= sample.field_id %></td>
+          <td><%= sample.date %></td>
+        </tr>
+      <% end %>
+      </tbody>
+      </table>
+  </div>
 
 <%= link_to 'New Sample', new_sample_path %>

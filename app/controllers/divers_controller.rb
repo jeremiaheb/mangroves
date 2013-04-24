@@ -1,8 +1,8 @@
 class DiversController < ApplicationController
   
   
-  #before_filter :authenticate_diver!
-
+  before_filter :authenticate_diver!
+  load_and_authorize_resource
   
   # GET /divers
   # GET /divers.json
