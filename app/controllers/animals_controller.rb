@@ -2,7 +2,7 @@ class AnimalsController < ApplicationController
   
   
   before_filter :authenticate_diver!
-
+  load_and_authorize_resource
     
   # GET /animals
   # GET /animals.json

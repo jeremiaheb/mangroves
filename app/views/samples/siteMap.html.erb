@@ -3,7 +3,7 @@
   <div class="row">
     <div class="span10">
       <div id="floatingMap">
-        <h3 class="head1">Florida Keys Map</h3>
+        <h3 class="head1">Site Map</h3>
         <%= gmaps({
           "markers" => {"data" => @sampleSites},
           "polygons" => { "data" => @floridaKeysSpas }
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="span2 sideBar">
-      <%#<%= render 'legend' %>%>
+      <%= render 'sidebar' %>
     </div>
   </div>
 </div>
