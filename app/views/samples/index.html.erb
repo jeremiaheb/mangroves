@@ -21,4 +21,7 @@
       </table>
   </div>
 
-<%= link_to 'New Sample', new_sample_path %>
+  <%= link_to 'New Sample', new_sample_path %>
+ <% if diver_signed_in? && current_diver.role == 'admin' %>
+  <%= link_to 'Excel', samples_path(format: "xls") %>
+<% end %>

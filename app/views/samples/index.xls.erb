@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Workbook
+   xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+   xmlns:o="urn:schemas-microsoft-com:office:office"
+   xmlns:x="urn:schemas-microsoft-com:office:excel"
+   xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+   xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sample">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Date</Data></Cell>
+        <Cell><Data ss:Type="String">Field ID</Data></Cell>
+        <Cell><Data ss:Type="String">Lat</Data></Cell>
+        <Cell><Data ss:Type="String">Lon</Data></Cell>
+        <Cell><Data ss:Type="String">Season</Data></Cell>
+        <Cell><Data ss:Type="String">strata</Data></Cell>
+        <Cell><Data ss:Type="String">avg_depth</Data></Cell>
+      </Row>
+    <% @samples.each do |sample| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= sample.msn %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= sample.date %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sample.field_id %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sample.latitude %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sample.longitude %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sample.season %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sample.strata %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sample.avg_depth %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+  <Worksheet ss:Name="Species">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">msn</Data></Cell>
+        <Cell><Data ss:Type="String">species</Data></Cell>
+        <Cell><Data ss:Type="String">number</Data></Cell>
+        <Cell><Data ss:Type="String">mean</Data></Cell>
+        <Cell><Data ss:Type="String">min</Data></Cell>
+        <Cell><Data ss:Type="String">max</Data></Cell>
+      </Row>
+      <% @samples.each do |sample| %>
+        <% sample.sample_animals.each do |spp| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= spp.sample.msn %></Data></Cell>
+            <Cell><Data ss:Type="Date"><%= spp.animal.spp_code%></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= spp.number_individuals %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= spp.average_length %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= spp.min_length %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= spp.max_length %></Data></Cell>
+          </Row>
+        <% end %>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

@@ -13,10 +13,14 @@ class SamplesController < ApplicationController
     #@samples = Sample.all
     
     @samples = current_diver.role == 'admin' || current_diver.role == 'Diver' ? Sample.all : current_diver.samples
+    
+    
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @samples }
+      format.csv  { send_data Sample.to_csv }
+      format.xls  # { send_data Sample.to_csv(col_sep: "\t") }
     end
   end
 
