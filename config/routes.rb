@@ -1,8 +1,17 @@
 Mangroves::Application.routes.draw do
   resources :reference_sites
 
-  devise_for :divers
-
+  #devise_for :divers
+  devise_for :divers, :skip => [:registrations]
+  devise_scope :diver do
+    get "signup",   :to => "accounts#new"
+    get "signin",   :to => "devise/sessions#new"
+    get "signout",  :to => "devise/sessions#destroy"
+    get "cancel_diver_registration", :to => "devise/registrations#cancel"
+    post "diver_registration",       :to => "divers#create"
+    get "new_diver_registration",    :to => "accounts#new"
+    get "edit_diver_registration",   :to => "divers#edit"
+  end
   resources :animals
 
   resources :divers
