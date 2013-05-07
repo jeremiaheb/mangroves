@@ -4,7 +4,7 @@
   <%= render "shared/error_messages", :target => @sample%>
 <div class="sampleSection">
   <div class="row">
-    <div class="span6">
+    <div class="span4">
           <div class="control-group">
              <label class="control-label">Diver</label>
              <div class="controls">
@@ -15,28 +15,28 @@
            <div class="control-group">
              <label class="control-label">Sample Date</label>
              <div class="controls">
-               <%= f.text_field :date %>
+               <%= f.text_field :sample_date %>
              </div>
            </div>
            
            <div class="control-group">
-             <label class="control-label">Field Id</label>
+             <label class="control-label">Running Site</label>
              <div class="controls">
-               <%= f.text_field :field_id %>
+               <%= f.text_field :running_site %>
              </div>
            </div>
 
            <div class="control-group">
-            <label class="control-label">Season</label>
+            <label class="control-label">Refernece Site</label>
              <div class="controls">
-               <%= f.text_field :season %>
+               <%= f.collection_select :reference_site, ReferenceSite.all, :name, :name, { :include_blank => "" } %><br />
              </div>
            </div>
 
            <div class="control-group">
-            <label class="control-label">Strata</label>
+            <label class="control-label">Sample Time</label>
              <div class="controls">
-               <%= f.text_field :strata %>
+               <%= f.text_field :sample_time %>
              </div>
            </div>
 
@@ -46,26 +46,42 @@
                <%= f.text_field :latitude %>
              </div>
            </div>
-    </div>
-    <div class="span6">
-        <div class="control-group">
-         <label class="control-label">longitude</label>
-          <div class="controls">
-            <%= f.text_field :longitude %>
-          </div>
-        </div>
+           
+           <div class="control-group">
+            <label class="control-label">longitude</label>
+             <div class="controls">
+               <%= f.text_field :longitude %>
+             </div>
+           </div>
+           
+           <div class="control-group">
+            <label class="control-label">Shoreline Code</label>
+             <div class="controls">
+               <%= f.select :shoreline_cd, options_for_select(@sample.shoreline_options), :prompt => ""  %>
+             </div>
+           </div>
+           
+           <div class="control-group">
+            <label class="control-label">Mangrove Spp</label>
+             <div class="controls">
+               <%= f.text_field :mangrove_spp %>
+             </div>
+           </div>
+           
+           <div class="control-group">
+            <label class="control-label">Underwater Habitat</label>
+             <div class="controls">
+               <%= f.text_field :underwater_habitat %>
+             </div>
+           </div>
 
-        <div class="control-group">
+    </div>
+    <div class="span8">
+      
+      <div class="control-group">
          <label class="control-label">Temperature</label>
           <div class="controls">
             <%= f.text_field :temperature %>
-          </div>
-        </div>
-
-        <div class="control-group">
-         <label class="control-label">Dissolved O2</label>
-          <div class="controls">
-            <%= f.text_field :dissolved_oxygen %>
           </div>
         </div>
 
@@ -77,9 +93,16 @@
         </div>
 
         <div class="control-group">
-         <label class="control-label">Avg Depth</label>
+         <label class="control-label">Dissolved O2</label>
           <div class="controls">
-            <%= f.text_field :avg_depth %>
+            <%= f.text_field :dissolved_oxygen %>
+          </div>
+        </div>
+
+        <div class="control-group">
+         <label class="control-label">pH</label>
+          <div class="controls">
+            <%= f.text_field :ph %>
           </div>
         </div>
 
@@ -89,6 +112,49 @@
             <%= f.text_field :visibility %>
           </div>
         </div>
+
+        <div class="control-group">
+         <label class="control-label">Depth Meter 0</label>
+          <div class="controls">
+            <%= f.text_field :depth_meter_0 %>
+          </div>
+        </div>
+
+        <div class="control-group">
+         <label class="control-label">Depth Meter 15</label>
+          <div class="controls">
+            <%= f.text_field :depth_meter_15 %>
+          </div>
+        </div>
+        
+        <div class="control-group">
+         <label class="control-label">Depth Meter 30</label>
+          <div class="controls">
+            <%= f.text_field :depth_meter_30 %>
+          </div>
+        </div>
+        
+        <div class="control-group">
+         <label class="control-label">Canopy Width</label>
+          <div class="controls">
+            <%= f.text_field :canopy_width %>
+          </div>
+        </div>
+        
+        <div class="control-group">
+         <label class="control-label">Canopy Height</label>
+          <div class="controls">
+            <%= f.text_field :canopy_height %>
+          </div>
+        </div>
+           
+           <div class="control-group">
+            <label class="control-label">Notes</label>
+             <div class="controls">
+               <%= f.text_area :notes, { :size => '60x3', :autocomplete => :off } %>
+             </div>
+           </div>
+
     </div>
   </div>
 </div>

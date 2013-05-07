@@ -23,6 +23,14 @@
  
 $(function(){
   
+
+  $("#sample_sample_date").datepicker({
+    format: 'yyyy-mm-dd',
+    autoclose: true
+  });
+  
+  $("#sample_sample_time").timeEntry({ show24Hours: true });
+
       $('tr[data-link]').click(function(){
       window.location = this.dataset.link
     });

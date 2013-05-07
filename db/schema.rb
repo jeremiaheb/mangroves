@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424153631) do
+ActiveRecord::Schema.define(:version => 20130507153106) do
 
   create_table "animals", :force => true do |t|
     t.string   "spp_code"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(:version => 20130424153631) do
   add_index "divers", ["email"], :name => "index_divers_on_email", :unique => true
   add_index "divers", ["reset_password_token"], :name => "index_divers_on_reset_password_token", :unique => true
 
+  create_table "reference_sites", :force => true do |t|
+    t.string   "name"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "strata"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "sample_animals", :force => true do |t|
     t.integer  "sample_id"
     t.integer  "animal_id"
@@ -55,20 +64,29 @@ ActiveRecord::Schema.define(:version => 20130424153631) do
   end
 
   create_table "samples", :force => true do |t|
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "diver_id"
-    t.string   "field_id"
-    t.string   "season"
-    t.string   "strata"
-    t.date     "date"
+    t.date     "sample_date"
     t.float    "latitude"
     t.float    "longitude"
     t.decimal  "temperature"
     t.decimal  "dissolved_oxygen"
     t.decimal  "salinity"
-    t.decimal  "avg_depth"
     t.decimal  "visibility"
+    t.string   "running_site"
+    t.string   "reference_site"
+    t.time     "sample_time"
+    t.decimal  "ph"
+    t.decimal  "depth_meter_0"
+    t.decimal  "depth_meter_15"
+    t.decimal  "depth_meter_30"
+    t.integer  "shoreline_cd"
+    t.text     "mangrove_spp"
+    t.text     "underwater_habitat"
+    t.decimal  "canopy_width"
+    t.decimal  "canopy_height"
+    t.text     "notes"
   end
 
 end

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @reference_site.name %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @reference_site.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @reference_site.longitude %>
+</p>
+
+<p>
+  <b>Strata:</b>
+  <%= @reference_site.strata %>
+</p>
+
+
+<%= link_to 'Edit', edit_reference_site_path(@reference_site) %> |
+<%= link_to 'Back', reference_sites_path %>

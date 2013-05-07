@@ -8,7 +8,7 @@ class Sample < ActiveRecord::Base
   has_many :animals, :through => :sample_animals
   accepts_nested_attributes_for :sample_animals, :reject_if => lambda {  |a| a[:animal_id].blank? }, :allow_destroy => true
 
-  attr_accessible :diver_id, :date, :field_id, :season, :strata, :latitude, :longitude, :temperature, :dissolved_oxygen, :salinity, :avg_depth, :visibility, :sample_animals_attributes
+  attr_accessible :diver_id, :sample_date, :running_site, :reference_site, :sample_time, :latitude, :longitude, :shoreline_cd, :mangrove_spp, :underwater_habitat, :temperature, :salinity, :dissolved_oxygen, :ph, :visibility, :depth_meter_0, :depth_meter_15, :depth_meter_30, :canopy_width, :canopy_height, :notes, :sample_animals_attributes
 
   def myId
     return self.diver_id
@@ -16,6 +16,10 @@ class Sample < ActiveRecord::Base
 
   def msn
     return [ self.date.strftime('%Y%m%d'), self.field_id, self.diver.lastname.downcase ].join('')
+  end
+
+  def shoreline_options
+   return [ ["Fringe", 1], ["Overwash", 2], ["Island", 3], ["Dwarf", 4], ["Scrub", 5] ]
   end
 
   def gmaps4rails_infowindow

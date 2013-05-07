@@ -5,7 +5,7 @@
         <thead>
          <tr>
            <th>Diver</th>
-           <th>field ID</th>
+           <th>Running Site</th>
            <th>Date</th>
          </tr>
        </thead>
@@ -13,8 +13,8 @@
       <% @samples.each do |sample| %>
         <tr data-link=" <%= edit_sample_path(sample) %> ">
           <td><%= sample.diver.firstname %></td>
-          <td class='fieldid_check'><%= sample.field_id %></td>
-          <td><%= sample.date %></td>
+          <td class='fieldid_check'><%= sample.running_site %></td>
+          <td><%= sample.sample_date %></td>
         </tr>
       <% end %>
       </tbody>

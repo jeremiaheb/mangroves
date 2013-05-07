@@ -1,0 +1,29 @@
+<h1>Listing reference_sites</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Strata</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reference_sites.each do |reference_site| %>
+  <tr>
+    <td><%= reference_site.name %></td>
+    <td><%= reference_site.latitude %></td>
+    <td><%= reference_site.longitude %></td>
+    <td><%= reference_site.strata %></td>
+    <td><%= link_to 'Show', reference_site %></td>
+    <td><%= link_to 'Edit', edit_reference_site_path(reference_site) %></td>
+    <td><%= link_to 'Destroy', reference_site, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reference site', new_reference_site_path %>
