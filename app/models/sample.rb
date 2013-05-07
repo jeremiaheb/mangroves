@@ -18,14 +18,17 @@ class Sample < ActiveRecord::Base
     return [ self.date.strftime('%Y%m%d'), self.field_id, self.diver.lastname.downcase ].join('')
   end
 
-  def shoreline_options
-   return [ ["Fringe", 1], ["Overwash", 2], ["Island", 3], ["Dwarf", 4], ["Scrub", 5] ]
-  end
+  SHORELINES = [ ["Fringe", 1], ["Overwash", 2], ["Island", 3], ["Dwarf", 4], ["Scrub", 5] ]
+
+
+  MANGROVES = [ ["red", "red"], ["black", "black"], ["white", "white"], ["buttonwood", "buttonwood"] ]
+
+
 
   def gmaps4rails_infowindow
-    "<b>#{self.field_id}</b><br />
+    "<b>#{self.running_site}</b><br />
     #{self.latitude}, #{self.longitude}<br />
-    Date Completed: #{self.date}"
+    Date Completed: #{self.sample_date}"
   end
 
   def gmaps4rails_address
@@ -33,7 +36,7 @@ class Sample < ActiveRecord::Base
   end
 
   def gmaps4rails_title
-    "#{self.field_id}"
+    "#{self.running_site}"
   end
 
   def self.to_csv(options = {})

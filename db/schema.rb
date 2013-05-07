@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507153106) do
+ActiveRecord::Schema.define(:version => 20130507171832) do
 
   create_table "animals", :force => true do |t|
     t.string   "spp_code"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(:version => 20130507153106) do
     t.datetime "updated_at",         :null => false
     t.integer  "diver_id"
     t.date     "sample_date"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.decimal  "temperature"
     t.decimal  "dissolved_oxygen"
     t.decimal  "salinity"

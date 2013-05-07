@@ -29,7 +29,6 @@ $(function(){
     autoclose: true
   });
   
-  $("#sample_sample_time").timeEntry({ show24Hours: true });
 
       $('tr[data-link]').click(function(){
       window.location = this.dataset.link
@@ -51,6 +50,9 @@ $(function(){
     } );
 
   $("#animals").find(".sppCommon").select2();
+  //$("#sample_shoreline_cd").select2();
+  //$("#sample_mangrove_spp").select2();
+
 
   $(document).on('nested:fieldAdded', function(event){
     event.field.find(".sppCommon").select2();
@@ -293,46 +295,64 @@ $(function(){
                 'sample[diver_id]': {
                          required: true
                        },
-                date: {
+                'sample[sample_date]': {
                          required: true
                        },
-                'sample[field_id]': {
-                         required: true,
-                          fieldidFormat: true,
-                          minlength: 5,
-                          maxlength: 5
+                'sample[running_site]': {
+                         required: true
                        },
-                'sample[season]': {
+                'sample[reference_site]': {
                         required: true
                       },
-                'sample[strata]': {
-                        required: true,
-                        digits: true
+                'sample[sample_time]': {
+                        required: true
                       },
                 'sample[latitude]': {
                         required: true,
-                        digits: true
+                        number: true
                       },
                 'sample[longitude]': {
                         required: true,
-                        digits: true
+                        number: true
                       },
-                'sample[temperature]': {
+                'sample[shoreline_cd]': {
                         required: true
                       },
-                'sample[dissolved_oxygen]': {
+                'sample[mangrove_spp]': {
+                        required: true
+                      },
+                'sample[underwater_habitat]': {
+                        required: true
+                      },
+                'sample[temperature]': {
                         required: true,
-                        digits: true
+                        number: true
                       },
                 'sample[salinity]': {
                         required: true,
-                        digits: true
+                        number: true
                       },
-                'sample[avg_depth]': {
+                'sample[dissolved_oxygen]': {
+                        required: true,
+                        number: true
+                      },
+                'sample[ph]': {
                         required: true,
                         number: true
                       },
                 'sample[visibility]': {
+                        required: true,
+                        number: true
+                      },
+                'sample[depth_meter_0]': {
+                        required: true,
+                        number: true
+                      },
+                'sample[depth_meter_15]': {
+                        required: true,
+                        number: true
+                      },
+                'sample[depth_meter_30]': {
                         required: true,
                         number: true
                       }
@@ -422,4 +442,9 @@ $(function(){
         $(".add_nested_fields").trigger("click");
       }
     });
+
+
+  $("#sample_sample_time").timeEntry({ show24Hours: true });
+
+
 });

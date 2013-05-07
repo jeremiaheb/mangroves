@@ -99,3 +99,20 @@
 #map img {
   max-width: none;
 }
+
+.form-horizontal .control-label {
+  text-align: left !important;
+  width: 100px !important;
+}
+
+.form-horizontal .controls {
+  margin-left: 100px !important;
+}
+
+.form-horizontal select {
+  width: 100px !important;
+}
+
+.form-horizontal input {
+  width: 125px !important;
+}
