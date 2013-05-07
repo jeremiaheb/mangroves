@@ -8,9 +8,9 @@ Mangroves::Application.routes.draw do
     get "signin",   :to => "devise/sessions#new"
     get "signout",  :to => "devise/sessions#destroy"
     get "cancel_diver_registration", :to => "devise/registrations#cancel"
-    post "diver_registration",       :to => "divers#create"
+    put "diver_registration",       :to => "devise/registrations#update"
     get "new_diver_registration",    :to => "accounts#new"
-    get "edit_diver_registration",   :to => "divers#edit"
+    get "edit_diver_registration",   :to => "devise/registrations#edit"
   end
   resources :animals
 
