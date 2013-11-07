@@ -15,7 +15,7 @@ class Sample < ActiveRecord::Base
   end
 
   def msn
-    return [ self.date.strftime('%Y%m%d'), self.field_id, self.diver.lastname.downcase ].join('')
+    return [ self.sample_date.strftime('%Y%m%d'), self.running_site, self.diver.lastname.downcase ].join('')
   end
 
   SHORELINES = [ ["Fringe", 1], ["Overwash", 2], ["Island", 3], ["Dwarf", 4], ["Scrub", 5] ]

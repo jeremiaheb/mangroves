@@ -10,23 +10,23 @@
       <Row>
         <Cell><Data ss:Type="String">ID</Data></Cell>
         <Cell><Data ss:Type="String">Date</Data></Cell>
-        <Cell><Data ss:Type="String">Field ID</Data></Cell>
+        <Cell><Data ss:Type="String">Running Site</Data></Cell>
         <Cell><Data ss:Type="String">Lat</Data></Cell>
         <Cell><Data ss:Type="String">Lon</Data></Cell>
-        <Cell><Data ss:Type="String">Season</Data></Cell>
-        <Cell><Data ss:Type="String">strata</Data></Cell>
-        <Cell><Data ss:Type="String">avg_depth</Data></Cell>
+        <Cell><Data ss:Type="String">Underwater Habitat</Data></Cell>
+        <Cell><Data ss:Type="String">Shoreline Code</Data></Cell>
+        <Cell><Data ss:Type="String">Depth Meter 0</Data></Cell>
       </Row>
     <% @samples.each do |sample| %>
       <Row>
         <Cell><Data ss:Type="String"><%= sample.msn %></Data></Cell>
         <Cell><Data ss:Type="Date"><%= sample.sample_date %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= sample.field_id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sample.running_site %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= sample.latitude %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= sample.longitude %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= sample.season %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= sample.strata %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= sample.avg_depth %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sample.underwater_habitat %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sample.shoreline_cd %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sample.depth_meter_0 %></Data></Cell>
       </Row>
     <% end %>
     </Table>
