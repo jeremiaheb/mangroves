@@ -1,0 +1,17 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: 'sample') do |sheet|
+  sheet.add_row [ "Sample Date", "Latitude", "Longitude" ]
+  @samples.each do |sample|
+    sheet.add_row [ sample.sample_date, sample.latitude, sample.longitude ]
+  end
+
+wb.add_worksheet(name: 'species') do |sheet2|
+  sheet2.add_row [ "Species", "Number", "Mean", "Min", "Max" ]
+  @samples.each do |sample|
+    sample.sample_animals.each do |spp|
+      sheet2.add_row [ spp.animal.spp_code, spp.number_individuals, spp.average_length, spp.min_length, spp.max_length]
+    end
+  end
+end
+
+end
