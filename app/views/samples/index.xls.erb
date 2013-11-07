@@ -25,7 +25,7 @@
         <Cell><Data ss:Type="Number"><%= sample.latitude %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= sample.longitude %></Data></Cell>
         <Cell><Data ss:Type="String"><%= sample.underwater_habitat %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= sample.shoreline_cd %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sample.shoreline_cd %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= sample.depth_meter_0 %></Data></Cell>
       </Row>
     <% end %>
@@ -45,7 +45,7 @@
         <% sample.sample_animals.each do |spp| %>
           <Row>
             <Cell><Data ss:Type="String"><%= spp.sample.msn %></Data></Cell>
-            <Cell><Data ss:Type="Date"><%= spp.animal.spp_code%></Data></Cell>
+            <Cell><Data ss:Type="String"><%= spp.animal.spp_code%></Data></Cell>
             <Cell><Data ss:Type="Number"><%= spp.number_individuals %></Data></Cell>
             <Cell><Data ss:Type="Number"><%= spp.average_length %></Data></Cell>
             <Cell><Data ss:Type="Number"><%= spp.min_length %></Data></Cell>
