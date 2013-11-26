@@ -86,7 +86,6 @@ $(function(){
       $('.distanceBetweenRunningReference').text(d.toFixed(0))
     };
 
-    getStationDistance();
     $('.coordinates').change(function(){
       getStationDistance();
     });
