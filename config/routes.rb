@@ -1,4 +1,6 @@
 Mangroves::Application.routes.draw do
+  resources :bottom_types
+
   resources :reference_sites
 
   #devise_for :divers

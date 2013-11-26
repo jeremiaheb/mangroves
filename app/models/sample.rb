@@ -8,7 +8,13 @@ class Sample < ActiveRecord::Base
   has_many :animals, :through => :sample_animals
   accepts_nested_attributes_for :sample_animals, :reject_if => lambda {  |a| a[:animal_id].blank? }, :allow_destroy => true
 
-  attr_accessible :diver_id, :sample_date, :running_site, :reference_site, :sample_time, :latitude, :longitude, :shoreline_cd, :mangrove_spp, :underwater_habitat, :temperature, :salinity, :dissolved_oxygen, :ph, :visibility, :depth_meter_0, :depth_meter_15, :depth_meter_30, :canopy_width, :canopy_height, :notes, :sample_animals_attributes
+
+  has_many :sample_bottom_types, :dependent => :destroy
+  has_many :bottom_types, :through => :sample_bottom_types
+  accepts_nested_attributes_for :sample_bottom_types, :reject_if => lambda {  |a| a[:bottom_type_id].blank? }, :allow_destroy => true
+
+
+  attr_accessible :diver_id, :sample_date, :running_site, :reference_site, :sample_time, :latitude, :longitude, :shoreline_cd, :mangrove_spp, :underwater_habitat, :temperature, :salinity, :dissolved_oxygen, :ph, :visibility, :depth_meter_0, :depth_meter_15, :depth_meter_30, :canopy_width, :canopy_height, :notes, :sample_animals_attributes, :sample_bottom_types_attributes
 
   def myId
     return self.diver_id
@@ -21,7 +27,8 @@ class Sample < ActiveRecord::Base
   SHORELINES = [ ["Fringe", 1], ["Overwash", 2], ["Island", 3], ["Dwarf", 4], ["Scrub", 5] ]
 
 
-  MANGROVES = [ ["red", "red"], ["black", "black"], ["white", "white"], ["buttonwood", "buttonwood"] ]
+  MANGROVES = [ ["red", "red"], ["black", "black"], ["white", "white"],
+                ["buttonwood", "buttonwood"] ]
 
 
 

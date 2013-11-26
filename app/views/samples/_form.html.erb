@@ -71,13 +71,6 @@
                <%= f.text_field :mangrove_spp  %>
              </div>
            </div>
-           
-           <div class="control-group">
-            <label class="control-label">Underwater Habitat</label>
-             <div class="controls">
-               <%= f.text_field :underwater_habitat %>
-             </div>
-           </div>
 
         <div class="control-group">
          <label class="control-label">Depth Meter 0</label>
@@ -100,7 +93,15 @@
           </div>
         </div>
 
+      </div>
+
+    <div class='span2'>
+      <legend id="bottomTypeHeader"> Underwater Types </legend>
+      <%= render "bottom_type_fields", :object => f  %>
+      <%= f.link_to_add "Add Bottom Type", :sample_bottom_types %>
+
     </div>
+
     <div class="span3">
       
       <div class="control-group">
@@ -137,10 +138,13 @@
                <%= f.text_area :notes, { :size => '60x3', :autocomplete => :off } %>
              </div>
            </div>
-
     </div>
+
+
   </div>
 </div>
+
+
   <div class="row">
     <div class="span12">
       <div id="animals">
