@@ -116,3 +116,9 @@
 .form-horizontal input {
   width: 125px !important;
 }
+
+#bottomTypeHeader {
+  text-align: center;
+  line-height: 5px;
+  font-size: 12px;
+}

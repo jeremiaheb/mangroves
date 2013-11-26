@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131125191354) do
+ActiveRecord::Schema.define(:version => 20131126144217) do
 
   create_table "animals", :force => true do |t|
     t.string   "spp_code"
@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(:version => 20131125191354) do
   end
 
   create_table "samples", :force => true do |t|
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "diver_id"
     t.date     "sample_date"
     t.decimal  "latitude"
@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(:version => 20131125191354) do
     t.decimal  "depth_meter_30"
     t.integer  "shoreline_cd"
     t.text     "mangrove_spp"
-    t.text     "underwater_habitat"
     t.decimal  "canopy_width"
     t.decimal  "canopy_height"
     t.text     "notes"

@@ -93,7 +93,15 @@
           </div>
         </div>
 
+      </div>
+
+    <div class='span2'>
+      <legend id="bottomTypeHeader"> Underwater Types </legend>
+      <%= render "bottom_type_fields", :object => f  %>
+      <%= f.link_to_add "Add Bottom Type", :sample_bottom_types %>
+
     </div>
+
     <div class="span3">
       
       <div class="control-group">
@@ -130,11 +138,6 @@
                <%= f.text_area :notes, { :size => '60x3', :autocomplete => :off } %>
              </div>
            </div>
-    </div>
-    <div class='span3'>
-      <%= render "bottom_type_fields", :object => f  %>
-      <%= f.link_to_add "Add Bottom Type", :sample_bottom_types %>
-
     </div>
 
 
