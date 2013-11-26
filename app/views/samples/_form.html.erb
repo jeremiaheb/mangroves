@@ -100,7 +100,7 @@
     <div class='span2'>
       <legend id="bottomTypeHeader"> Underwater Types </legend>
       <%= render "bottom_type_fields", :object => f  %>
-      <%= f.link_to_add "Add Bottom Type", :sample_bottom_types %>
+      <%= f.link_to_add "Add Bottom Type", :sample_bottom_types, { :class => "add_underwater_types" } %>
 
     </div>
 
@@ -153,7 +153,7 @@
         <ol>   
           <%= render "animals", :object => f %>
           
-          <%= f.link_to_add "Add species", :sample_animals %>
+          <%= f.link_to_add "Add species", :sample_animals, { :class => "add_nested_species" } %>
         </ol>
       </div>
     </div>

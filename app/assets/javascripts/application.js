@@ -147,7 +147,7 @@ $(function(){
   enable_disable_animals_fields_on_load();
   enable_disable_animals_fields();
   
-  $(document).delegate(".add_nested_fields", "click", function(){ 
+  $(document).delegate(".add_nested_species", "click", function(){ 
         enable_disable_animals_fields();
         $("#animals input:text:visible").eq(-5).focus();
    });
@@ -472,13 +472,18 @@ $(function(){
       }
     });
 
-    $("form").bind("keypress", function(e){
+    $(".sampleSection").bind("keypress", function(e){
       if (e.keyCode ==13){
         e.preventDefault();
-        $(".add_nested_fields").trigger("click");
       }
     });
-
+  
+    $("#animals").bind("keypress", function(e){
+      if (e.keyCode ==13){
+        e.preventDefault();
+        $(".add_nested_species").trigger("click");
+      }
+    });
 
   $("#sample_sample_time").timeEntry({ show24Hours: true });
 
