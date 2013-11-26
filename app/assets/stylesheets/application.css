@@ -122,3 +122,8 @@
   line-height: 5px;
   font-size: 12px;
 }
+
+.distanceBetweenRunningReference {
+  font-weight: bold;
+  font-size: 15px;
+}

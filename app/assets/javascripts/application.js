@@ -52,7 +52,44 @@ $(function(){
   $("#animals").find(".sppCommon").select2();
   //$("#sample_shoreline_cd").select2();
   //$("#sample_mangrove_spp").select2();
+  
+  //check distance between refernce site and entered running site
+  referenceSiteInformation = {}
+  $.each(reference_site_info, function(a){
+    referenceSiteInformation[reference_site_info[a].id] = { "lat": reference_site_info[a].latitude, "lon": reference_site_info[a].longitude };
+  });
 
+    Number.prototype.toRad = function() {
+      return this * Math.PI / 180;
+    }
+
+
+    function getStationDistance() {
+      var lat2 = parseFloat($('#sample_latitude').val()); 
+      var lon2 = parseFloat($('#sample_longitude').val());
+
+      var lat1 = parseFloat(referenceSiteInformation[$("#sample_reference_site").val()].lat);
+      var lon1 = parseFloat(referenceSiteInformation[$("#sample_reference_site").val()].lon);
+      
+      var R = 6371000; // m 
+      //has a problem with the .toRad() method below.
+      var x1 = lat2-lat1;
+      var dLat = x1.toRad();  
+      var x2 = lon2-lon1;
+      var dLon = x2.toRad();  
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                      Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
+                      Math.sin(dLon/2) * Math.sin(dLon/2);  
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c; 
+      
+      $('.distanceBetweenRunningReference').text(d.toFixed(0))
+    };
+
+    getStationDistance();
+    $('.coordinates').change(function(){
+      getStationDistance();
+    });
 
   $(document).on('nested:fieldAdded', function(event){
     event.field.find(".sppCommon").select2();
