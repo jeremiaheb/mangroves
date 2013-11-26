@@ -71,13 +71,6 @@
                <%= f.text_field :mangrove_spp  %>
              </div>
            </div>
-           
-           <div class="control-group">
-            <label class="control-label">Underwater Habitat</label>
-             <div class="controls">
-               <%= f.text_field :underwater_habitat %>
-             </div>
-           </div>
 
         <div class="control-group">
          <label class="control-label">Depth Meter 0</label>
@@ -125,44 +118,30 @@
         </div>
 
         <div class="control-group">
-         <label class="control-label">pH</label>
-          <div class="controls">
-            <%= f.text_field :ph %>
-          </div>
-        </div>
-
-        <div class="control-group">
          <label class="control-label">Visibility</label>
           <div class="controls">
             <%= f.text_field :visibility %>
           </div>
         </div>
 
-        
-        <div class="control-group">
-         <label class="control-label">Canopy Width</label>
-          <div class="controls">
-            <%= f.text_field :canopy_width %>
-          </div>
-        </div>
-        
-        <div class="control-group">
-         <label class="control-label">Canopy Height</label>
-          <div class="controls">
-            <%= f.text_field :canopy_height %>
-          </div>
-        </div>
-           
            <div class="control-group">
             <label class="control-label">Notes</label>
              <div class="controls">
                <%= f.text_area :notes, { :size => '60x3', :autocomplete => :off } %>
              </div>
            </div>
+    </div>
+    <div class='span3'>
+      <%= render "bottom_type_fields", :object => f  %>
+      <%= f.link_to_add "Add Bottom Type", :sample_bottom_types %>
 
     </div>
+
+
   </div>
 </div>
+
+
   <div class="row">
     <div class="span12">
       <div id="animals">

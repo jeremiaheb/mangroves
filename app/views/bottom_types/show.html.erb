@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @bottom_type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @bottom_type.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_bottom_type_path(@bottom_type) %> |
+<%= link_to 'Back', bottom_types_path %>

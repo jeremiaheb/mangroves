@@ -40,6 +40,7 @@ class SamplesController < ApplicationController
     @sample = Sample.new
 
     @sample.sample_animals.build
+    @sample.sample_bottom_types.build
 
     respond_to do |format|
       format.html # new.html.erb

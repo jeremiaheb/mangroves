@@ -1,0 +1,8 @@
+
+<%= object.fields_for :sample_bottom_types do |builder| %>
+  <li>
+  <%= builder.collection_select :bottom_type_id, BottomType.all, :id, :name, {:include_blank => ""} %>
+  <%= builder.link_to_remove "Remove Bottom Type", {:tabindex => "-1"}  %>
+  </li>
+
+<% end %>
