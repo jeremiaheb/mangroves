@@ -59,7 +59,8 @@
 
 }
 
-#animals {
+.animalSection {
+    position: relative;
     width: 100%;
     height: 250px;
     padding: 20px;
@@ -79,7 +80,13 @@
 
     /* Font Styles */
     font-size: 10px;
- 
+}
+
+#animals {
+    width: 90%;
+    height: 175px;
+    overflow: auto; 
+    position: relative;
 }
 
 #animals input {
@@ -126,4 +133,34 @@
 .distanceBetweenRunningReference {
   font-weight: bold;
   font-size: 15px;
+}
+
+
+.speciesLabels #species {
+  position: relative;
+  font-size: 15px;
+  left: 75px;
+}
+.speciesLabels #num {
+  position: relative;
+  font-size: 15px;
+  left: 168px;
+}
+
+.speciesLabels #mean {
+  position: relative;
+  font-size: 15px;
+  left: 188px;
+}
+
+.speciesLabels #min {
+  position: relative;
+  font-size: 15px;
+  left: 210px;
+}
+
+.speciesLabels #max {
+  position: relative;
+  font-size: 15px;
+  left: 239px;
 }
