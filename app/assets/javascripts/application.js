@@ -86,6 +86,11 @@ $(function(){
       $('.distanceBetweenRunningReference').text(d.toFixed(0))
     };
 
+
+    if($("body").hasClass("edit")) {
+      getStationDistance();    
+    }
+
     $('.coordinates').change(function(){
       getStationDistance();
     });
