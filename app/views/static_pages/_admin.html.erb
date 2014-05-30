@@ -1,71 +1,60 @@
 
 <div class="container">          
   <div class="row home">
-    <div class="span4">
+    <div class="span2">
       <div class="img_box">
         <a href= <%= url_for siteMap_path %>>
           <img <%= image_tag 'FormButton.jpg' %>
         </a>
       </div>
       <div class="text">
-        <h6>Click here for list of your samples</h6>
-          <p>
-            Some text about where you are going when clicked.
-          </p>
+        <h6>Site Map</h6>
       </div>
     </div>
-    <div class="span4">
+
+    <div class="span1">
       <div class="img_box">
-       <a href=<%= url_for samples_path %>>
-           <img <%= image_tag 'FormButton.jpg' %>
-       </a>
+        <a href= <%= url_for divers_path %>>
+          <img <%= image_tag 'FormButton.jpg' %>
+        </a>
       </div>
       <div class="text">
-        <h6>Click here to go to the RVC mapping application</h6>
-          <p>
-            Some text about where you are going when clicked
-          </p>
+        <h6>Divers List</h6>
       </div>
     </div>
-    <div class="span4">
+
+    <div class="span1">
       <div class="img_box">
-       <a href= <%= url_for samples_path %> >
-           <img <%= image_tag "FormButton.jpg" %>
-       </a>
+        <a href= <%= url_for reference_sites_path %>>
+          <img <%= image_tag 'FormButton.jpg' %>
+        </a>
       </div>
       <div class="text">
-        <h6>Another link to url of my choice</h6>
-          <p>
-            Some text about where you are going when clicked
-          </p>
+        <h6> Reference Sites List</h6>
       </div>
     </div>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
-    <%#<div class="span1">%>
-      
-    <%#</div>%>
+
+    <div class="span1">
+      <div class="img_box">
+        <a href= <%= url_for animals_path %>>
+          <img <%= image_tag 'FormButton.jpg' %>
+        </a>
+      </div>
+      <div class="text">
+        <h6> Animals List</h6>
+      </div>
+    </div>
+
+    <div class="span1">
+      <div class="img_box">
+        <a href= <%= url_for bottom_types_path %>>
+          <img <%= image_tag 'FormButton.jpg' %>
+        </a>
+      </div>
+      <div class="text">
+        <h6> Bottom Types List</h6>
+      </div>
+    </div>
+
   </div>
 </div>

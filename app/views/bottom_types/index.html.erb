@@ -1,25 +1,22 @@
-<h1>Listing bottom_types</h1>
+  <div class="formContainer">
+    <h2>Listing Reference Sites</h2>
+      <table id="animalsList" class="display table table-condensed">
+        <thead>
+        <tr>
+          <th> Name </th>
+          <th> Description </th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @bottom_types.each do |type| %>
+        <tr data-link=" <%= edit_bottom_type_path(type) %> ">
+          <td><%= type.name %> </td>
+          <td><%= type.description %> </td>
+        </tr>
+      <% end %>
+      </tbody>
+      </table>
+  </div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @bottom_types.each do |bottom_type| %>
-  <tr>
-    <td><%= bottom_type.name %></td>
-    <td><%= bottom_type.description %></td>
-    <td><%= link_to 'Show', bottom_type %></td>
-    <td><%= link_to 'Edit', edit_bottom_type_path(bottom_type) %></td>
-    <td><%= link_to 'Destroy', bottom_type, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Bottom type', new_bottom_type_path %>
+<%= link_to 'New Bottom Type', new_bottom_type_path %>
