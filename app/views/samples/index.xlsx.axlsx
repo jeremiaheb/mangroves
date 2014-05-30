@@ -16,6 +16,11 @@ wb.add_worksheet(name: 'sample') do |sheet|
                   "Depth_30m",
                   "Shoreline Code",
                   "Shoreline Spp",
+                  "Bottom Type 1",
+                  "Bottom Type 2",
+                  "Bottom Type 3",
+                  "Bottom Type 4",
+                  "Bottom Type 5",
                   "Width of Canopy",
                   "Height of Canopy",
                   "Notes"]
@@ -36,6 +41,11 @@ wb.add_worksheet(name: 'sample') do |sheet|
                     sample.depth_meter_30,
                     sample.shoreline_cd,
                     sample.mangrove_spp,
+                    sample.bottom_type_1,
+                    sample.bottom_type_2,
+                    sample.bottom_type_3,
+                    sample.bottom_type_4,
+                    sample.bottom_type_5,
                     sample.canopy_width,
                     sample.canopy_height,
                     sample.notes]
