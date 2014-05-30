@@ -97,12 +97,44 @@
 
       </div>
 
-    <div class='span2'>
-      <legend id="bottomTypeHeader"> Underwater Types </legend>
-      <%= render "bottom_type_fields", :object => f  %>
-      <%= f.link_to_add "Add Bottom Type", :sample_bottom_types, { :class => "add_underwater_types" } %>
+      <div class='span2'>
 
-    </div>
+        <div class="control-group">
+          <label class="control-label">Bottom Type 1</label>
+          <div class="controls">
+            <%= f.collection_select :bottom_type_1, BottomType.all, :id, :name, { :include_blank => "" } %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Bottom Type 2</label>
+          <div class="controls">
+            <%= f.collection_select :bottom_type_2, BottomType.all, :id, :name, { :include_blank => "" } %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Bottom Type 3</label>
+          <div class="controls">
+            <%= f.collection_select :bottom_type_3, BottomType.all, :id, :name, { :include_blank => "" } %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Bottom Type 4</label>
+          <div class="controls">
+            <%= f.collection_select :bottom_type_4, BottomType.all, :id, :name, { :include_blank => "" } %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Bottom Type 5</label>
+          <div class="controls">
+            <%= f.collection_select :bottom_type_5, BottomType.all, :id, :name, { :include_blank => "" } %>
+          </div>
+        </div>
+
+      </div>
 
     <div class="span3">
       

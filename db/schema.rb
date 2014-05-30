@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131126144217) do
+ActiveRecord::Schema.define(:version => 20140530142551) do
 
   create_table "animals", :force => true do |t|
     t.string   "spp_code"
@@ -100,6 +100,11 @@ ActiveRecord::Schema.define(:version => 20131126144217) do
     t.decimal  "canopy_width"
     t.decimal  "canopy_height"
     t.text     "notes"
+    t.string   "bottom_type_1"
+    t.string   "bottom_type_2"
+    t.string   "bottom_type_3"
+    t.string   "bottom_type_4"
+    t.string   "bottom_type_5"
   end
 
 end
