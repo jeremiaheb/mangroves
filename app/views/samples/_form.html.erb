@@ -130,7 +130,7 @@
         <div class="control-group">
           <label class="control-label">Bottom Type 5</label>
           <div class="controls">
-            <%= f.collection_select :bottom_type_5, BottomType.all, :id, :name, { :include_blank => "" } %>
+            <%= f.collection_select :bottom_type_5, BottomType.all, :name, :name, { :include_blank => "" } %>
           </div>
         </div>
 
