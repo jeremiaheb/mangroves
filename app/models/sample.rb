@@ -1,7 +1,7 @@
 class Sample < ActiveRecord::Base
 
   acts_as_gmappable :process_geocoding => false
-
+  
   belongs_to :diver
   has_many :sample_animals, :dependent => :destroy
   validates_presence_of :sample_animals, :message => "you must have at leat one species record (can be NO FISH)"

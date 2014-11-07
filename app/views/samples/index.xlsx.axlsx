@@ -29,7 +29,7 @@ wb.add_worksheet(name: 'sample') do |sheet|
                     sample.sample_date,
                     sample.latitude,
                     sample.longitude,
-                    sample.reference_site,
+                    ReferenceSite.find(sample.reference_site).name,
                     sample.sample_time,
                     sample.temperature,
                     sample.salinity,
