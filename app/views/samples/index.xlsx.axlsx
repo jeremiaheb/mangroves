@@ -1,7 +1,9 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: 'sample') do |sheet|
   sheet.add_row [ "Running Site",
-                  "Sample Date",
+                  "YR",
+                  "MO",
+                  "DY",
                   "Latitude",
                   "Longitude",
                   "Reference Site",
@@ -14,6 +16,7 @@ wb.add_worksheet(name: 'sample') do |sheet|
                   "Depth_Om",
                   "Depth_15m",
                   "Depth_30m",
+                  "AVDEP",
                   "Shoreline Code",
                   "Shoreline Spp",
                   "Bottom Type 1",
@@ -26,11 +29,13 @@ wb.add_worksheet(name: 'sample') do |sheet|
                   "Notes"]
   @samples.each do |sample|
     sheet.add_row [ sample.running_site,
-                    sample.sample_date,
+                    sample.sample_date.strftime("%Y"),
+                    sample.sample_date.strftime("%m"),
+                    sample.sample_date.strftime("%d"),
                     sample.latitude,
                     sample.longitude,
                     ReferenceSite.find(sample.reference_site).name,
-                    sample.sample_time,
+                    sample.setTime,
                     sample.temperature,
                     sample.salinity,
                     sample.dissolved_oxygen,
@@ -39,6 +44,7 @@ wb.add_worksheet(name: 'sample') do |sheet|
                     sample.depth_meter_0,
                     sample.depth_meter_15,
                     sample.depth_meter_30,
+                    sample.averageDepth,
                     sample.shoreline_cd,
                     sample.mangrove_spp,
                     sample.bottom_type_1,

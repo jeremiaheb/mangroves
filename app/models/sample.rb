@@ -27,6 +27,13 @@ class Sample < ActiveRecord::Base
                 ["buttonwood", "buttonwood"] ]
 
 
+  def setTime
+    "#{sample_time.strftime("%H")}#{sample_time.strftime("%M")}"
+  end
+
+  def averageDepth
+    (depth_meter_0 + depth_meter_15 + depth_meter_30) / 3
+  end
 
   def gmaps4rails_infowindow
     "<b>#{self.running_site}</b><br />
