@@ -76,4 +76,45 @@ wb.add_worksheet(name: 'species') do |sheet2|
   end
 end
 
+wb.add_worksheet(name: 'ForJoe') do |sheet3|
+  sheet3.add_row [  "Running Site",
+                    "Species",
+                    "Number",
+                    "Mean",
+                    "Min",
+                    "Max",
+                    "mo",
+                    "day",
+                    "yr",
+                    "time",
+                    "lat",
+                    "lon",
+                    "temp",
+                    "do",
+                    "sal",
+                    "avdepth",
+                    "viz"]
+  @samples.each do |sample|
+    sample.sample_animals.each do |spp|
+    sheet3.add_row [  spp.sample.running_site,
+                        spp.animal.spp_code,
+                        spp.number_individuals,
+                        spp.average_length,
+                        spp.min_length.presence || ".",
+                        spp.max_length.presence || ".",
+                        spp.sample.sample_date.strftime("%m"),
+                        spp.sample.sample_date.strftime("%d"),
+                        spp.sample.sample_date.strftime("%Y"),
+                        spp.sample.setTime,
+                        spp.sample.latitude,
+                        spp.sample.longitude,
+                        spp.sample.temperature,
+                        spp.sample.dissolved_oxygen,
+                        spp.sample.salinity,
+                        spp.sample.averageDepth,
+                        spp.sample.visibility]
+
+    end
+  end
+end
 end
