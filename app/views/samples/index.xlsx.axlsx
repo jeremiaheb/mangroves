@@ -99,7 +99,7 @@ wb.add_worksheet(name: 'ForJoe') do |sheet3|
     sheet3.add_row [  spp.sample.running_site,
                         spp.animal.spp_code,
                         spp.number_individuals,
-                        spp.average_length,
+                        spp.average_length.presence || ".",
                         spp.min_length.presence || ".",
                         spp.max_length.presence || ".",
                         spp.sample.sample_date.strftime("%m"),
