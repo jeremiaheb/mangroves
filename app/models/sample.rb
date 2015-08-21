@@ -32,7 +32,9 @@ class Sample < ActiveRecord::Base
   end
 
   def averageDepth
+    unless depth_meter_0.nil? || depth_meter_15.nil? || depth_meter_30.nil?
     (depth_meter_0 + depth_meter_15 + depth_meter_30) / 3
+    end
   end
 
   def gmaps4rails_infowindow
